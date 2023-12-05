@@ -13,6 +13,7 @@ const {
 } = require("../src/server/get-api-response");
 const { sessionMiddleware } = require("../src/server/session-controller");
 router.use(cookieParser()); //쿠키 파서 미들웨어
+//세션 생성 및 컨트롤 부분은 따로 모듈화하여 관리한다.
 router.use(sessionMiddleware); //세션 미들웨어
 
 router.get("/", async (req, res) => {
